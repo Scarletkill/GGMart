@@ -59,7 +59,7 @@ class Login extends StatelessWidget {
                                         fontSize: 20),
                                     ),
                                     const SizedBox(
-                                      height: 5,
+                                      height: 10,
                                     ),
                                     RichText(text: TextSpan(
                                         text: "Doesn't Have an account yet?",
