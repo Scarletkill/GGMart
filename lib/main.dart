@@ -1,12 +1,22 @@
-import 'dart:js';
-
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:gg_mart/dashboard.dart';
 import 'package:gg_mart/list_view.dart';
 import 'package:gg_mart/login.dart';
+import 'package:gg_mart/register.dart';
 import 'package:gg_mart/splash.dart';
+import 'package:gg_mart/topics.dart';
+import 'package:gg_mart/user_list.dart';
+import 'package:gg_mart/utlis/Edit_profile.dart';
+
+import 'Home.dart';
+import 'Profile.dart';
+import 'firebase_options.dart';
+
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  initializeFirebase();
   runApp(
     MaterialApp(
       title: "The Good Grocer",
@@ -16,42 +26,23 @@ void main() {
       ),
         routes:{
         '/':(BuildContext context) => Splash(),
-         '/dashboard':(context) => Dashboard(),
+         '/Home':(context) => Searchbar(),
           '/ListviewScreen': (context) => ListviewScreen(),
-          '/login':(context) => Login()
+          '/login':(context) => Login(),
+          //'/TopPicks':(context) => TopPicks(),
+          '/register':(context) => Register(),
+          '/profile':(context) => Profile (),
+          '/edit-profile':(context) => EditProfile(),
+          '/users-list':(context) => UserLists()
     },
     )
   );
 }
-
-class MyApp extends StatefulWidget {
-  const MyApp({super.key});
-
-  @override
-  State<MyApp> createState() => _MyAppState();
-}
-
-class _MyAppState extends State<MyApp> {
-  // This widget is the root of your application.
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(
-        "Driving Licence Test",
-          style: TextStyle(
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
-            fontStyle: FontStyle.normal,
-          ),
-      ),
-        actions: const[
-          Padding(padding: const EdgeInsets.only(right: 30),)
-        ],
-        centerTitle: true,
-    ),
-    );
-  }
+void initializeFirebase() async{
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  FirebaseAuth.instance.signInWithPhoneNumber('+9779761743031').then(
+      (value)=>print('Login Sucess $value'),
+  ).catchError((error)=>print('Auth Error'));
 }
 
 
