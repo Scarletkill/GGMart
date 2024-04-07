@@ -6,12 +6,13 @@ class FirebaseAuthService{
     try {
       UserCredential userCredential = await _auth
           .createUserWithEmailAndPassword(email: email, password: password);
+      print('User Details ${userCredential.user?.uid}');
       return userCredential.user;
     }on FirebaseAuthService catch(e){
       print('Firebase Auth Exception $e');
     }
     catch (e) {
-      print('something went wrong');
+      print('something went wrong $e');
     }
     return null;
   }
@@ -19,6 +20,7 @@ class FirebaseAuthService{
   Future<User?>loginWithEmailAndPassword(String email, String password)async{
     try{
       UserCredential userCredential = await _auth.signInWithEmailAndPassword(email: email, password: password);
+      print('Login ${userCredential.user?.uid}');
       return userCredential.user;
     }on FirebaseAuthService catch(e){
       print('Firebase Auth Exception $e');

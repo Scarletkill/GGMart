@@ -40,9 +40,6 @@ void main() {
 }
 void initializeFirebase() async{
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-  FirebaseAuth.instance.signInWithPhoneNumber('+9779761743031').then(
-      (value)=>print('Login Sucess $value'),
-  ).catchError((error)=>print('Auth Error'));
 }
 
 
