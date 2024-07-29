@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "648358045075",
+    "project_id": "the-gg-mart",
+    "storage_bucket": "the-gg-mart.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:648358045075:android:249edce7b7b3e1738db466",
+        "android_client_info": {
+          "package_name": "com.example.gg_mart"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC736gS_uvgsqv-CLlLPaCEOsNQ7QSxsMw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
