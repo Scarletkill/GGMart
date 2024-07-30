@@ -1,5 +1,3 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
 import 'package:english_words/english_words.dart';
 import 'package:gg_mart/Service/firebase_auth_service.dart';
@@ -93,13 +91,48 @@ class _SearchBarState extends State<SearchBar>{
               ),
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: SizedBox(
-              width: 150,
-              child: productWidget(),
-            ),
-          ),
+         Padding(
+           padding: const EdgeInsets.all(8.0),
+           child: Row(
+             children: [
+               Text("EXPLORE POPULAR CATEGORIES",
+               style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold, fontStyle: FontStyle.italic),),
+
+             ],
+           ),
+         ),
+         Padding(
+           padding: const EdgeInsets.all(8.0),
+           child: Row(
+           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+           children:[
+             SizedBox(
+               width: 100,
+               child:beverageWidget(),
+             ),
+             SizedBox(
+               width:100,
+               child:harddrinkWidget(),
+             ),
+             SizedBox(
+               width:100,
+               child: ChocolateWidget(),
+             ),
+             SizedBox(
+               width: 100,
+               child: SnacksWidget(),
+             ),
+             SizedBox(
+               width:100,
+               child: BeautyWidget(),
+             ),
+             SizedBox(
+               width: 100,
+               child: KitchenWidget(),
+             )
+           ],
+           ),
+         ),
           Expanded(
             child: ListView.builder(
               itemCount: filteredWords.length,
@@ -111,12 +144,12 @@ class _SearchBarState extends State<SearchBar>{
             ),
           ),
         ],
-      ),
-    );
+        ),
+      );
   }
 }
 
-class productWidget extends StatelessWidget{
+class beverageWidget extends StatelessWidget{
   @override
   Widget build(BuildContext context){
     return Card(
@@ -129,10 +162,10 @@ class productWidget extends StatelessWidget{
         children: <Widget>[
           Padding(
             padding: const EdgeInsets.all(8.0),
-            child: Image.asset('assets/Images/bev.jpg', width: 100,)
+            child: Image.asset('assets/Images/bev.jpg', width: 60,)
             ),
           ListTile(
-            title: Text('Beverage',textAlign: TextAlign.center),
+            title: Text('Beverage',style:TextStyle(fontSize: 11),textAlign: TextAlign.center),
           ),
         ],
       ),
@@ -140,7 +173,123 @@ class productWidget extends StatelessWidget{
   }
 }
 
+class harddrinkWidget extends StatelessWidget{
+  @override
+  Widget build(BuildContext context){
+    return Card(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(15.0),
+      ),
+      elevation: 5,
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: <Widget>[
+          Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Image.asset('assets/Images/hard.jpg', width: 60,)
+          ),
+          ListTile(
+            title: Text('Hard Drinks',style:TextStyle(fontSize: 11),textAlign: TextAlign.center),
+          ),
+        ],
+      ),
+    );
+  }
+}
 
+class ChocolateWidget extends StatelessWidget{
+  @override
+  Widget build(BuildContext context){
+    return Card(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(15.0),
+      ),
+      elevation: 5,
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: <Widget>[
+          Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Image.asset('assets/Images/chooo.jpg', width: 85,)
+          ),
+          ListTile(
+            title: Text('Chocolates',style:TextStyle(fontSize: 11),textAlign: TextAlign.center),
+          ),
+        ],
+      ),
+    );
+  }
+}
+class SnacksWidget extends StatelessWidget{
+  @override
+  Widget build(BuildContext context){
+    return Card(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(15.0),
+      ),
+      elevation: 5,
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: <Widget>[
+          Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Image.asset('assets/Images/sna.jpg', width: 85,)
+          ),
+          ListTile(
+            title: Text('Snacks',style:TextStyle(fontSize: 11),textAlign: TextAlign.center),
+          ),
+        ],
+      ),
+    );
+  }
+}
 
+class BeautyWidget extends StatelessWidget{
+  @override
+  Widget build(BuildContext context){
+    return Card(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(15.0),
+      ),
+      elevation: 5,
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: <Widget>[
+          Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Image.asset('assets/Images/beuti.jpg', width: 85,)
+          ),
+          ListTile(
+            title: Text('Beauty Products',style:TextStyle(fontSize: 11),textAlign: TextAlign.center),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class KitchenWidget extends StatelessWidget{
+  @override
+  Widget build(BuildContext context){
+    return Card(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(15.0),
+      ),
+      elevation: 5,
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: <Widget>[
+          Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Image.asset('assets/Images/kitchen.jpg', width: 85,)
+          ),
+          ListTile(
+            title: Text('Kitchen Utensils',style:TextStyle(fontSize: 11),textAlign: TextAlign.center),
+          ),
+        ],
+      ),
+    );
+  }
+}
 
 

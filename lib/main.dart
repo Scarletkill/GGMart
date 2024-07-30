@@ -25,7 +25,7 @@ void main() {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.lightGreen)
       ),
         routes:{
-        '/':(BuildContext context) => Splash(),
+        '/':(BuildContext context) =>Splash(),
          '/Home':(context) => Searchbar(),
           '/ListviewScreen': (context) => ListviewScreen(),
           '/login':(context) => Login(),

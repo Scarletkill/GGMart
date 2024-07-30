@@ -24,7 +24,14 @@ class _SplashState extends State<Splash> {
     return Scaffold(
       backgroundColor: Colors.white,
       body: Center(
-        child: Image.asset('assets/Images/giphy.gif'),
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: SizedBox(
+          width: 150,
+          height: 150,
+          child: Image.asset('assets/Images/giphy.gif'),
+        ),
+      ),
         //child: SvgPicture.asset('assets/Images/'),
       ),
     );
