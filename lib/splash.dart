@@ -12,7 +12,7 @@ class Splash extends StatefulWidget {
 class _SplashState extends State<Splash> {
   @override
   void initState(){
-    Timer(Duration(seconds: 4),
+    Timer(Duration(seconds: 6),
             ()=> Navigator.of(context).pushReplacementNamed('/login'));
     super.initState();
   }
@@ -20,6 +20,8 @@ class _SplashState extends State<Splash> {
     return Scaffold(
       backgroundColor: Colors.white,
       body: Center(
+        widthFactor: 150,
+        heightFactor: 150,
         child: Image.asset('assets/Images/giphy.gif'),
         //child: SvgPicture.asset('assets/Images/upload.svg'),
       ),
