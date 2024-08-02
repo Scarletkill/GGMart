@@ -15,7 +15,7 @@ class Splash extends StatefulWidget {
 class _SplashState extends State<Splash> {
   @override
   void initState() {
-    Timer(Duration(seconds: 3),
+    Timer(Duration(seconds: 4),
         () => Navigator.of(context).pushReplacementNamed('/ListviewScreen'));
     super.initState();
   }

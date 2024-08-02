@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:english_words/english_words.dart';
 import 'package:gg_mart/Service/firebase_auth_service.dart';
@@ -129,7 +130,7 @@ class _SearchBarState extends State<SearchBar>{
              SizedBox(
                width: 100,
                child: KitchenWidget(),
-             )
+             ),
            ],
            ),
          ),
@@ -271,25 +272,14 @@ class BeautyWidget extends StatelessWidget{
 class KitchenWidget extends StatelessWidget{
   @override
   Widget build(BuildContext context){
-    return Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15.0),
-      ),
-      elevation: 5,
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: <Widget>[
-          Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Image.asset('assets/Images/kitchen.jpg', width: 85,)
-          ),
-          ListTile(
-            title: Text('Kitchen Utensils',style:TextStyle(fontSize: 11),textAlign: TextAlign.center),
-          ),
-        ],
+    return Center(
+      child:CircleAvatar(
+        radius: 55,
+        backgroundImage: AssetImage('assets/Images/kitchen.jpg'),
       ),
     );
   }
 }
+
 
 
