@@ -7,7 +7,7 @@ class Login extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.lightGreen[400],
+      backgroundColor: Colors.lightGreen[300],
       body: Center(
           child: Container(
             width: kIsWeb ? MediaQuery
